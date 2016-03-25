@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ExamProject
 {
-    public class LinkedList<T> : ILinkedList<T> where T : IEquatable<T>
+    public class LinkedList<T> : ILinkedList<T> where T : IEquatable<T>, IComparable <T>
     {
         //definition of fields: header - first node of list, tailer - last node of list, counter - number of nodes in the list
         private Node<T> header;
@@ -174,7 +174,26 @@ namespace ExamProject
 
         public void Sort()
         {
-            throw new NotImplementedException();
+            Node<T> currentNode = header;
+            Node<T> tempNext;
+           // Node<T> tempPrev;
+
+            for (int j = 0; j < counter-1; j++)
+            {
+                for (int i = j + 1; i > 0; i--)
+                {
+                    if (currentNode.NodeElement.CompareTo(currentNode.NextElement.NodeElement)>0)
+                    {
+                        tempNext = currentNode.NextElement.NextElement;
+                    //    tempPrev = currentNode.PrevElement;
+                        currentNode.PrevElement = currentNode.NextElement;
+                        currentNode.NextElement = currentNode;
+                        currentNode.PrevElement = currentNode.NextElement;
+                        currentNode = tempNext;
+                    }
+                    currentNode = currentNode.NextElement;
+                }
+            }
         }
 
         public void Print()

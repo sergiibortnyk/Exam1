@@ -40,18 +40,18 @@ namespace ListTest
             bool result = false;
             Assert.AreEqual(result, list.Find(10), "It is not there");
         }
-        /*
+        
         [TestMethod]
         public void TestListValidity()
         {
             ILinkedList<string> list = PrepareListof4Strings();
-            bool works = list.First().Value == "one";
-            works = works & list.First().Next.Value == "two";
-            works = works & list.First().Next.Next.Value == "three";
+            bool works = list.First().NodeElement == "one";
+            works = works & list.First().NextElement.NodeElement == "two";
+            works = works & list.First().NextElement.NextElement.NodeElement == "three";
 
             Assert.IsTrue(works, "The list is wrong!");
         }
-        */
+        
         private LinkedList<int> PrepareListof10Int()
         {
             LinkedList<int> list = new LinkedList<int>();
@@ -67,7 +67,6 @@ namespace ListTest
             list.AddFirst(10);
 
             return list;
-
         }
 
         private LinkedList<string> PrepareListof4Strings()
@@ -79,7 +78,6 @@ namespace ListTest
             list.AddLast("four");
 
             return list;
-
         }
     }
 }

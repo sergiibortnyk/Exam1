@@ -10,7 +10,7 @@ namespace ExamProject
     {
         static void Main(string[] args)
         {
-            LinkedList<string> myList = new LinkedList<string>();
+           /* LinkedList<string> myList = new LinkedList<string>();
             myList.AddFirst("C");
             myList.AddFirst("B");
             myList.AddFirst("A");
@@ -33,6 +33,17 @@ namespace ExamProject
             myList.Remove("A");
             myList.Print();
             Console.WriteLine("------");
+            */
+            LinkedList<int> myList2 = new LinkedList<int>();
+            myList2.AddFirst(4);
+            myList2.AddFirst(5);
+            myList2.AddFirst(1);
+            myList2.AddFirst(0);
+            myList2.AddFirst(56);
+            myList2.Print();
+            myList2.Sort();           
+            myList2.Print();
+
             Console.ReadKey();
         }
     }
