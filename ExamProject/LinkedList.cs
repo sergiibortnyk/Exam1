@@ -185,7 +185,7 @@ namespace ExamProject
             {                
                 Console.WriteLine("Element {0} in the list: {1}", k, temp.NodeElement);
                 temp = temp.NextElement;
-                k++;
+                k++; 
             }                  
         }
     }
