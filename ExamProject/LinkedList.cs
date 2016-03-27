@@ -174,25 +174,22 @@ namespace ExamProject
 
         public void Sort()
         {
-            Node<T> currentNode = header;
-            Node<T> tempNext;
-           // Node<T> tempPrev;
+            Node<T> currentNode = null;
+            T temp= default(T);
 
-            for (int j = 0; j < counter-1; j++)
+            for (int i = 0; i < counter; i++)
             {
-                for (int i = j + 1; i > 0; i--)
-                {
-                    if (currentNode.NodeElement.CompareTo(currentNode.NextElement.NodeElement)>0)
+                currentNode = header;                
+                while (currentNode.NextElement != null)
                     {
-                        tempNext = currentNode.NextElement.NextElement;
-                    //    tempPrev = currentNode.PrevElement;
-                        currentNode.PrevElement = currentNode.NextElement;
-                        currentNode.NextElement = currentNode;
-                        currentNode.PrevElement = currentNode.NextElement;
-                        currentNode = tempNext;
+                        if (currentNode.NodeElement.CompareTo(currentNode.NextElement.NodeElement) > 0)
+                        {
+                            temp = currentNode.NodeElement;
+                            currentNode.NodeElement  = currentNode.NextElement.NodeElement;
+                            currentNode.NextElement.NodeElement = temp;                            
+                        }
+                        currentNode = currentNode.NextElement;
                     }
-                    currentNode = currentNode.NextElement;
-                }
             }
         }
 

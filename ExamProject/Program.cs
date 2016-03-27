@@ -35,13 +35,15 @@ namespace ExamProject
             Console.WriteLine("------");
             */
             LinkedList<int> myList2 = new LinkedList<int>();
-            myList2.AddFirst(4);
-            myList2.AddFirst(5);
             myList2.AddFirst(1);
+            myList2.AddFirst(4);
+            myList2.AddFirst(3);
             myList2.AddFirst(0);
-            myList2.AddFirst(56);
+            myList2.AddFirst(2);
+            myList2.AddFirst(5);
             myList2.Print();
-            myList2.Sort();           
+            myList2.Sort();
+            Console.WriteLine("-------------");           
             myList2.Print();
 
             Console.ReadKey();
